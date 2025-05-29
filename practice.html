@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aideas - Your Guide to Smarter Research</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rampart+One&family=Kulim+Park&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Include Matter.js via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/matter-js@0.19.0/build/matter.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/aideas-icon.png" alt="Aideas Icon" class="logo-icon">
+                <a href="index.html">Aideas – Your Guide to Smarter Research</a>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="learn.html">Learn</a></li>
+                <li><a href="practice.html">Practice</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+  <section class="quiz-banner">
+    <h1>Test Your AI Ethics Knowledge</h1>
+  </section>
+
+  <form id="quizForm" class="quiz-container">
+    <div class="quiz-question" id="question1">
+      <p>1. What is one risk of using AI to generate information?</p>
+      <label><input type="radio" name="q1" value="A" /> It always tells the truth</label>
+      <label><input type="radio" name="q1" value="B" /> It can generate biased or incorrect info</label>
+      <label><input type="radio" name="q1" value="C" /> It only copies Wikipedia</label>
+    </div>
+
+    <div class="quiz-question" id="question2">
+      <p>2. Why is it important to question AI's output?</p>
+      <label><input type="radio" name="q2" value="A" /> AI is always neutral</label>
+      <label><input type="radio" name="q2" value="B" /> AI may reflect human bias</label>
+      <label><input type="radio" name="q2" value="C" /> AI has its own opinions</label>
+    </div>
+
+    <div class="quiz-question" id="question3">
+      <p>3. What should you do before trusting AI-generated content?</p>
+      <label><input type="radio" name="q3" value="A" /> Share it on social media</label>
+      <label><input type="radio" name="q3" value="B" /> Fact-check it</label>
+      <label><input type="radio" name="q3" value="C" /> Accept it without question</label>
+    </div>
+
+    <div class="quiz-question" id="question4">
+      <p>4. Which of these is a good practice when using AI tools?</p>
+      <label><input type="radio" name="q4" value="A" /> Double-check sources</label>
+      <label><input type="radio" name="q4" value="B" /> Never question AI</label>
+      <label><input type="radio" name="q4" value="C" /> Assume AI is always right</label>
+    </div>
+
+    <div class="quiz-question" id="question5">
+      <p>5. AI chatbots can answer questions and give advice, but why is it important to think critically about their responses?</p>
+      <label><input type="radio" name="q5" value="A" /> AI is 100% correct and never makes mistakes</label>
+      <label><input type="radio" name="q5" value="B" /> AI can sometimes give false or biased information</label>
+      <label><input type="radio" name="q5" value="C" /> AI knows everything and should always be trusted</label>
+    </div>
+
+    <div class="quiz-buttons">
+      <button type="button" onclick="goBack()">Back</button>
+      <button type="submit">Finish Test</button>
+    </div>
+  </form>
+
+  <script>
+    function goBack() {
+      window.location.href = "index.html"; // Or wherever "Back" should go
+    }
+
+    document.getElementById("quizForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const answers = {
+        q1: "B",
+        q2: "B",
+        q3: "B",
+        q4: "A",
+        q5: "B",
+      };
+
+      let score = 0;
+      Object.keys(answers).forEach((key) => {
+        const selected = document.querySelector(`input[name="${key}"]:checked`);
+        if (selected && selected.value === answers[key]) {
+          score++;
+        }
+      });
+
+      window.location.href = `result.html?score=${score}`;
+    });
+  </script>
+</body>
+</html>

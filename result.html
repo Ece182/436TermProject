@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aideas - Your Guide to Smarter Research</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rampart+One&family=Kulim+Park&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Include Matter.js via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/matter-js@0.19.0/build/matter.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/aideas-icon.png" alt="Aideas Icon" class="logo-icon">
+                <a href="index.html">Aideas – Your Guide to Smarter Research</a>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="learn.html">Learn</a></li>
+                <li><a href="practice.html">Practice</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+<body>
+  <section class="result-banner">
+    <h1>GREAT JOB!</h1>
+    <p><strong>Your Score: <span id="score"></span></strong></p>
+    <p><strong><span id="summary"></span> Questions are answered correctly</strong></p>
+    <p class="italic">AI is powerful, but using it wisely is even more important. Keep thinking critically and making ethical choices!</p>
+    <button onclick="retakeQuiz()">Retake Quiz</button>
+  </section>
+
+  <div class="result-buttons">
+    <button onclick="goBack()">Back to studying</button>
+    <button onclick="goNext()">Next Practice</button>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const score = params.get("score");
+
+    document.getElementById("score").innerText = `${(score / 5) * 100}%`;
+    document.getElementById("summary").innerText = `${score}/5`;
+
+    function retakeQuiz() {
+      window.location.href = "practice.html";
+    }
+
+    function goBack() {
+      window.location.href = "index.html"; // Adjust if needed
+    }
+
+    function goNext() {
+      alert("Next practice coming soon!");
+    }
+  </script>
+</body>
+</html>

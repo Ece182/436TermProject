@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aideas - Tech News</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rampart+One&family=Kulim+Park&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/aideas-icon.png" alt="Aideas Icon" class="logo-icon">
+                <a href="index.html">Aideas – Your Guide to Smarter Research</a>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="learn.html">Learn</a></li>
+                <li><a href="practice.html">Practice</a></li>
+                <li><a href="news.html" class="active">News</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2 class="news-title">What do you wanna learn today? Choose your book</h2>
+        <section class="book-cards">
+            <a href="news1.html" class="book-card" style="background-color: #f87171;">
+              <img src="images/ai.png" alt="AI" />
+              <span>AI Basics</span>
+            </a>
+          
+            <a href="news2.html" class="book-card" style="background-color: #fde68a;">
+              <img src="images/fact-check.png" alt="Fact Checking" />
+              <span>Fact Checking</span>
+            </a>
+          
+            <a href="news3.html" class="book-card" style="background-color: #86efac;">
+              <img src="images/search.png" alt="Smart Searching" />
+              <span>Smart Searching</span>
+            </a>
+          
+            <a href="news4.html" class="book-card" style="background-color: #a78bfa;">
+              <img src="images/digital.png" alt="Digital Literacy" />
+              <span>Digital Literacy</span>
+            </a>
+          
+            <a href="news5.html" class="book-card" style="background-color: #fb923c;">
+              <img src="images/cite.png" alt="Citing Sources" />
+              <span>Cite it Right!</span>
+            </a>
+          </section>
+                   
+    </main>
+
+    <footer>
+        <div class="footer-top">
+            <img src="images/aideas-icon.png" alt="Aideas Icon" class="logo-icon">
+            <h3>Aideas – Your Guide to Smarter Research</h3>
+            <p>Made by Aideas</p>
+        </div>
+        <div class="footer-links">
+            <div class="footer-column">
+                <h4>About</h4>
+                <ul>
+                    <li><a href="about.html">Practice</a></li>
+                    <li><a href="news.html">News</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Learn</h4>
+                <ul>
+                    <li><a href="learn.html">All Courses</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Core Research Skills</h4>
+                <ul>
+                    <li><a href="learn.html#smarter-searching">Smarter Searching on Google</a></li>
+                    <li><a href="learn.html#website-credibility">Evaluating Website Credibility</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Cite it Right!</h4>
+                <ul>
+                    <li><a href="learn.html#understanding-plagiarism">Understanding Plagiarism</a></li>
+                    <li><a href="learn.html#cite-sources">How to Cite Sources Properly</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Digital Literacy</h4>
+                <ul>
+                    <li><a href="learn.html#digital-literacy">What is Digital Literacy?</a></li>
+                    <li><a href="learn.html#deepfake">Deepfake and Information Manipulation</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>AI: Tool or Trap?</h4>
+                <ul>
+                    <li><a href="learn.html#ai-explained">AI Explained: Is It Really Smart?</a></li>
+                    <li><a href="learn.html#ai-academics">AI in Academics: Tool or Risk?</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-left">
+                <p>© 2025</p>
+                <a href="#">Terms</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div class="social-links">
+                <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+                <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+                <a href="#"><img src="github-icon.png" alt="GitHub"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const newsItems = document.querySelectorAll('.news-item');
+
+        newsItems.forEach(item => {
+            const title = item.querySelector('.news-title');
+            const preview = item.querySelector('.news-preview');
+            const content = item.querySelector('.news-content');
+
+            // Show preview on hover
+            title.addEventListener('mouseenter', () => {
+                preview.style.display = 'block';
+            });
+
+            title.addEventListener('mouseleave', () => {
+                preview.style.display = 'none';
+            });
+
+            // Expand on click
+            title.addEventListener('click', () => {
+                const isExpanded = item.classList.contains('expanded');
+
+                // Close all other expanded items
+                newsItems.forEach(otherItem => {
+                    otherItem.classList.remove('expanded');
+                    otherItem.querySelector('.news-content').style.display = 'none';
+                });
+
+                // Toggle current item
+                if (!isExpanded) {
+                    item.classList.add('expanded');
+                    content.style.display = 'block';
+                }
+            });
+        });
+    });
+    </script>
+</body>
+</html>
