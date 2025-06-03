@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aideas - Your Guide to Smarter Research</title>
+    <title>Aideas - Digital Literacy Quiz Results</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Rampart+One&family=Kulim+Park&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Include Matter.js via CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/matter-js@0.19.0/build/matter.min.js"></script>
 </head>
 <body>
     <header>
@@ -26,38 +24,108 @@
             </ul>
         </nav>
     </header>
-<body>
-  <section class="result-banner">
-    <h1>GREAT JOB!</h1>
-    <p><strong>Your Score: <span id="score"></span></strong></p>
-    <p><strong><span id="summary"></span> Questions are answered correctly</strong></p>
-    <p class="italic">AI is powerful, but using it wisely is even more important. Keep thinking critically and making ethical choices!</p>
-    <button onclick="retakeQuiz()">Retake Quiz</button>
-  </section>
 
-  <div class="result-buttons">
-    <button onclick="goBack()">Back to studying</button>
-    <button onclick="goNext()">Next Practice</button>
-  </div>
+    <main class="results-container">
+        <div class="results-header" style="background-color: #6BBAA7;">
+            <h1><span style="color: yellow;">★</span> <span id="result-title">GREAT JOB!</span> <span style="color: yellow;">★</span></h1>
+            <p>Your Score: <span id="score-percentage">0%</span></p>
+            <p><span id="score-fraction">0/5</span> Questions are answered correctly</p>
+            <p id="feedback-text">AI is powerful, but using it wisely is even more important. Keep thinking critically and making ethical choices!</p>
+        </div>
+        <div class="results-actions">
+            <a href="learn.html" class="nav-button">Back to studying</a>
+            <a href="practice.html" class="nav-button">Retake</a>
+            <a href="practice.html" class="nav-button">Next Practice</a>
+        </div>
+    </main>
 
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const score = params.get("score");
+    <footer>
+        <div class="footer-top">
+            <img src="images/aideas-icon.png" alt="Aideas Icon" class="logo-icon">
+            <h3>Aideas – Your Guide to Smarter Research</h3>
+            <p>Made by Aideas</p>
+        </div>
+        <div class="footer-links">
+            <div class="footer-column">
+                <h4>About</h4>
+                <ul>
+                    <li><a href="about.html">Practice</a></li>
+                    <li><a href="news.html">News</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Learn</h4>
+                <ul>
+                    <li><a href="learn.html">All Courses</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Core Research Skills</h4>
+                <ul>
+                    <li><a href="learn.html#smarter-searching">Smarter Searching on Google</a></li>
+                    <li><a href="learn.html#website-credibility">Evaluating Website Credibility</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Cite it Right!</h4>
+                <ul>
+                    <li><a href="learn.html#understanding-plagiarism">Understanding Plagiarism</a></li>
+                    <li><a href="learn.html#cite-sources">How to Cite Sources Properly</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Digital Literacy</h4>
+                <ul>
+                    <li><a href="learn.html#digital-literacy">What is Digital Literacy?</a></li>
+                    <li><a href="learn.html#deepfake">Deepfake and Information Manipulation</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>AI: Tool or Trap?</h4>
+                <ul>
+                    <li><a href="learn.html#ai-explained">AI Explained: Is It Really Smart?</a></li>
+                    <li><a href="learn.html#ai-academics">AI in Academics: Tool or Risk?</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-left">
+                <p>© 2025</p>
+                <a href="#">Terms</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div class="social-links">
+                <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+                <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+                <a href="#"><img src="github-icon.png" alt="GitHub"></a>
+            </div>
+        </div>
+    </footer>
 
-    document.getElementById("score").innerText = `${(score / 5) * 100}%`;
-    document.getElementById("summary").innerText = `${score}/5`;
+    <script>
+        const score = parseInt(localStorage.getItem('quizScore')) || 0;
+        const totalQuestions = parseInt(localStorage.getItem('totalQuestions')) || 5;
+        const percentage = Math.round((score / totalQuestions) * 100);
 
-    function retakeQuiz() {
-      window.location.href = "practice.html";
-    }
+        document.getElementById('score-percentage').textContent = `${percentage}%`;
+        document.getElementById('score-fraction').textContent = `${score}/${totalQuestions}`;
 
-    function goBack() {
-      window.location.href = "index.html"; // Adjust if needed
-    }
+        const resultTitle = document.getElementById('result-title');
+        const feedbackText = document.getElementById('feedback-text');
 
-    function goNext() {
-      alert("Next practice coming soon!");
-    }
-  </script>
+        if (percentage === 100) {
+            resultTitle.textContent = 'GREAT JOB!';
+            feedbackText.textContent = 'AI is powerful, but using it wisely is even more important. Keep thinking critically and making ethical choices!';
+        } else if (percentage >= 60) {
+            resultTitle.textContent = 'GOOD EFFORT!';
+            feedbackText.textContent = 'You’re on the right track! Keep practicing to improve your digital literacy skills.';
+        } else {
+            resultTitle.textContent = 'NEEDS PRACTICE!';
+            feedbackText.textContent = 'Don’t worry, digital literacy takes time. Review the material and try again to boost your skills!';
+        }
+
+        localStorage.removeItem('quizScore');
+        localStorage.removeItem('totalQuestions');
+    </script>
 </body>
 </html>
