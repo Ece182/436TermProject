@@ -22,7 +22,7 @@
                 <li><a href="learn.html">Learn</a></li>
                 <li><a href="practice.html">Practice</a></li>
                 <li><a href="news.html">News</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="#footer">Contact Us</a></li>
             </ul>
         </nav>
     </header>
@@ -39,20 +39,20 @@
             <h2>JOURNEY THROUGH THE WORLD OF RESEARCH</h2>
             <p>Learn with fun, interactive courses handcrafted by experts.</p>
             <div class="module-nav">
-                <button>Core Research Skills</button>
-                <button>Ethical AI</button>
-                <button>Digital Literacy</button>
+                <button data-filter="core">Core Research Skills</button>
+                <button data-filter="ethical">Ethical AI</button>
+                <button data-filter="literacy">Digital Literacy</button>
             </div>
             <div class="modules">
-                <div class="module">
+                <div class="module" data-category="core">
                     <h3>Core Research Skills</h3>
                     <p>Your journey to becoming a research pro starts here!</p>
                 </div>
-                <div class="module">
+                <div class="module" data-category="literacy">
                     <h3>Digital Literacy</h3>
                     <p>Unlock the tools to separate truth from misinformation.</p>
                 </div>
-                <div class="module">
+                <div class="module" data-category="ethical">
                     <h3>Ethical AI</h3>
                     <p>Learn the best practices for responsible AI use while staying in control of your learning.</p>
                 </div>
@@ -84,8 +84,7 @@
                     <img src="images/literacy.png" alt="Digital Literacy Image">
                 </div>
                 <div class="course-content">
-                    <h3>Digital Literacy</h3>
-                    <h2>Think Before You Click!</h2>
+                    <h2>Digital Literacy</h2>
                     <p>The internet is full of cool stuff - but also misleading info, scams, and clickbait. Learn how to spot fake news, stay safe online, and be a smart digital citizen.</p>
                 </div>
             </div>
@@ -106,9 +105,11 @@
     </main>
 
     <footer>
-        <div class="footer-top">
+        <div class="footer-top" id="footer">
             <img src="images/logo.png" alt="Aideas Icon" class="logo-icon">
+            <div class="footer-title">
             <h3>Aideas – Your Guide to Smarter Research</h3>
+            </div>
             <p>Made by Aideas</p>
         </div>
         <div class="footer-links">
@@ -169,6 +170,46 @@
     </footer>
 
     <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+        // Filter functionality for module cards in the journey section
+        const filterButtons = document.querySelectorAll('.module-nav button');
+        const modules = document.querySelectorAll('.module');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.getAttribute('data-filter');
+                console.log('Filter applied:', filter); // Debug log
+
+                // Hide all modules
+                modules.forEach(module => {
+                    module.style.display = 'none';
+                });
+
+                // Show only the module that matches the filter
+                const matchingModule = document.querySelector(`.module[data-category="${filter}"]`);
+                if (matchingModule) {
+                    matchingModule.style.display = 'block';
+                }
+            });
+        });
+
+        // Initially show the first module
+        if (modules[0]) {
+            modules[0].style.display = 'block';
+        }
+        // Add click event to the "Explore All Modules" link
+        const exploreLink = document.querySelector('.explore');
+        exploreLink.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent default link behavior
+            // Show all modules when "Explore All Modules" is clicked
+            modules.forEach(module => {
+                module.style.display = 'block';
+            });
+        });
+    });
+        
+
     document.addEventListener('DOMContentLoaded', () => {
         // Matter.js setup
         const Engine = Matter.Engine;
