@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aideas - Your Guide to Smarter Research</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rampart+One&family=Kulim+Park&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Include Matter.js via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/matter-js@0.19.0/build/matter.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+          <img src="images/logo.png" alt="Aideas Icon" class="logo-icon">
+          <a href="index.html">Aideas – Your Guide to Smarter Research</a>
+      </div>
+      <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="learn.html" class="active">Learn</a></li>
+          <li><a href="practice.html">Practice</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="#footer">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+<div class="trusted-container">
+    <h1>Deepfake and Information Manipulation</h1>
+    <div class="intro">
+      <p>Imagine watching a video of your favorite celebrity saying something shocking, only to discover it's completely fake. Welcome to the world of deepfakes—where technology can create realistic but false videos, images, and audio that can fool even the most careful observers.</p>
+    </div>
+    <section class="trusted-section">
+      <div class="trusted-content">
+        <div class="trusted-title">1. What is Deepfake Technology?</div>
+        <p>Deepfakes use artificial intelligence to swap faces, voices, or entire personas in videos and images. The technology analyzes thousands of photos and videos to learn how someone looks, talks, and moves, then creates fake content that appears incredibly realistic.</p>
+        <ol>
+          <li>AI analyzes facial features, expressions, and voice patterns from existing media.</li>
+          <li>The technology creates new content by combining and manipulating this data.</li>
+          <li>Results can be so realistic that they're difficult to distinguish from authentic content.</li>
+        </ol>
+      </div>
+      <img src="images/deepfake-technology.jpg" alt="Deepfake Technology Illustration" />
+    </section>
+    <section class="trusted-section reverse">
+      <div class="trusted-content">
+        <div class="trusted-title">2. How Are Fake Videos Created?</div>
+        <p>Creating deepfakes involves training AI models with massive amounts of data. The process requires powerful computers and specialized software that can take hours or days to produce convincing results, though the technology is becoming more accessible.</p>
+        <ol>
+          <li>Collect hundreds or thousands of images and videos of the target person.</li>
+          <li>Use machine learning algorithms to map facial features and expressions.</li>
+          <li>Generate new content by applying learned patterns to different scenarios.</li>
+        </ol>
+      </div>
+      <img src="images/fake-video-creation.jpg" alt="Fake Video Creation Process" />
+    </section>
+    <section>
+      <p>Deepfakes aren't just a technology problem—they're a trust problem. When anyone can create realistic fake videos, it becomes harder to know what's real and what's not. This technology can be used for entertainment, like putting historical figures in modern movies, but it can also be misused to spread false information, damage reputations, or manipulate public opinion.
+        <br> <br>The rise of deepfakes has serious implications for how we consume media. Politicians might appear to say things they never said, celebrities could be shown in compromising situations that never happened, and ordinary people might find their faces used without permission. This is why learning to detect manipulated content is becoming as important as learning to read.
+        <br> <br>Information manipulation goes beyond just deepfakes. It includes edited photos, misleading captions, out-of-context clips, and strategically cropped images. Sometimes, the most effective fake content combines real elements in misleading ways—like using a real photo but adding a false caption, or taking a video from one event and claiming it shows something completely different.
+        <br><br>The good news is that even as deepfake technology improves, so do the tools and techniques for detecting it. By learning to spot the signs of manipulation and developing healthy skepticism about online content, you can protect yourself and others from being misled by false information, whether it's created by advanced AI or simple photo editing.</p>
+    </section>
+
+    <section class="quiz-section">
+      <div class="quiz-text">
+        <p><strong>What makes deepfake technology particularly concerning for information verification?</strong></p>
+        <p><strong>Clue:</strong> Check paragraph no1</p>
+        <div id="quiz-feedback"></div>
+
+        <div class="quiz-options">
+          <button data-correct="false">It's too expensive for most people to use.</button>
+          <button data-correct="true">It creates fake content that looks incredibly realistic and hard to detect.</button>
+          <button data-correct="false">It only works with famous people and celebrities.</button>
+          <button data-correct="false">It requires special equipment that most people don't have.</button>
+        </div>
+        <a href="#learn-more" class="quiz-button visible">Learn More <i class="fa-solid fa-angle-right"></i></a>
+      </div>
+      <img class="quiz-img" src="images/deepfake-detection.jpg" alt="Deepfake Detection Quiz Illustration">
+    </section>
+
+    <section class="extra-resources" id="learn-more">
+      <h2>Resources for Students and Teachers</h2>
+      <p>Explore these helpful links to learn more about deepfakes and information manipulation:</p>
+      <ul>
+        <li><a href="https://www.deepfakedetectionchallenge.org/" target="_blank">Deepfake Detection Challenge</a> – Learn about efforts to detect deepfake content.</li>
+        <li><a href="https://www.reuters.com/fact-check/" target="_blank">Reuters Fact Check</a> – Professional fact-checking and verification resources.</li>
+        <li><a href="https://firstdraftnews.org/" target="_blank">First Draft</a> – Training and resources for verifying online information.</li>
+        <li><a href="https://www.snopes.com/" target="_blank">Snopes</a> – Fact-checking website that debunks false claims and misinformation.</li>
+      </ul>
+    </section>
+
+</div>
+
+  <script>
+    document.querySelector('.quiz-button').addEventListener('click', () => {
+      const targetSection = document.getElementById('learn-more');
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+
+    const buttons = document.querySelectorAll('.quiz-options button');
+    const feedback = document.getElementById('quiz-feedback');
+    let attempt = 0;
+    let correctAnswered = false;
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        if (correctAnswered) return;
+
+        const isCorrect = button.dataset.correct === 'true';
+
+        if (isCorrect) {
+          button.classList.add('correct');
+          buttons.forEach(btn => {
+            if (btn !== button) btn.classList.add('incorrect');
+          });
+          feedback.textContent = attempt === 0
+            ? "🎉 Congrats! That's correct!"
+            : "🎉 Congrats! You got it this time!";
+          feedback.className = 'correct';
+          correctAnswered = true;
+        } else {
+          button.classList.add('incorrect');
+          attempt++;
+
+          if (attempt === 1) {
+            feedback.textContent = "❌ Oops! Try again.";
+          } else if (attempt === 2) {
+            feedback.textContent = "🧠 You need to improve your critical thinking!";
+            buttons.forEach(btn => {
+              if (btn.dataset.correct === 'true') {
+                btn.classList.add('correct');
+              } else if (!btn.classList.contains('incorrect')) {
+                btn.classList.add('incorrect');
+              }
+            });
+            correctAnswered = true;
+          }
+          feedback.className = 'incorrect';
+        }
+      });
+    });
+  </script>
+
+
+    <footer id="footer">
+        <div class="footer-top">
+            <img src="images/logo.png" alt="Aideas Icon" class="logo-icon">
+            <div class="footer-title">
+            <h3>Aideas – Your Guide to Smarter Research</h3>
+            </div>
+            <p>Made by Aideas</p>
+        </div>
+        <div class="footer-links">
+            <div class="footer-column">
+                <h4>About</h4>
+                <ul>
+                    <li><a href="learn.html">Practice</a></li>
+                    <li><a href="news.html">News</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Learn</h4>
+                <ul>
+                    <li><a href="learn.html">All Courses</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Core Research Skills</h4>
+                <ul>
+                    <li><a href="module1_1.html">Smarter Searching on Google</a></li>
+                    <li><a href="module1_2.html">AI and Ethical Usage</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>AI: Tool or Trap?</h4>
+                <ul>
+                    <li><a href="module2_1.html">AI Explained: Is It Really Smart?</a></li>
+                    <li><a href="module2_2.html">AI in Academics: Tool or Risk?</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Cite it Right!</h4>
+                <ul>
+                    <li><a href="module3_1.html">Understanding Plagiarism</a></li>
+                    <li><a href="module3_2.html">How to Cite Sources Properly</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Digital Literacy</h4>
+                <ul>
+                    <li><a href="module4_1.html">What is Digital Literacy?</a></li>
+                    <li><a href="module4_2.html">Deepfake and Information Manipulation</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-left">
+                <p>© 2025</p>
+                <a href="#">Terms</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div class="social-links">
+                <a href="#"><img src="images/ig.png" alt="Instagram"></a>
+                <a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a>
+                <a href="#"><img src="images/github.png" alt="GitHub"></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

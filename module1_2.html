@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aideas - Your Guide to Smarter Research</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rampart+One&family=Kulim+Park&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Include Matter.js via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/matter-js@0.19.0/build/matter.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+          <img src="images/logo.png" alt="Aideas Icon" class="logo-icon">
+          <a href="index.html">Aideas – Your Guide to Smarter Research</a>
+      </div>
+      <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="learn.html" class="active">Learn</a></li>
+          <li><a href="practice.html">Practice</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="#footer">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <div class="trusted-container">
+    <h1>How Do I Know Which Websites I Can Trust?</h1>
+    <div class="intro">
+        <p>Not all websites are created equal! Learning to spot trustworthy sources from unreliable ones is one of the most important skills you can develop as a researcher. Let's explore how to become a digital detective and evaluate website credibility like a pro.</p>
+    </div>
+    
+    <section class="trusted-section">
+        <div class="trusted-content">
+            <div class="trusted-title">1. Check the Author and Publisher</div>
+            <p>The first step in evaluating any website is to identify who created the content. Reliable websites clearly display author credentials, publication dates, and contact information. This transparency shows they stand behind their work.</p>
+            <ol>
+                <li>Look for author names, qualifications, and expertise in the topic</li>
+                <li>Check if the website belongs to a reputable organization or institution</li>
+                <li>Verify that contact information and "About Us" sections are easily accessible</li>
+                <li>Be cautious of anonymous content or websites with no clear authorship</li>
+            </ol>
+        </div>
+        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=300&h=200&fit=crop" alt="Person researching on computer" />
+    </section>
+    
+    <section class="trusted-section reverse">
+        <div class="trusted-content">
+            <div class="trusted-title">2. Examine the URL and Domain</div>
+            <p>A website's URL can reveal important clues about its credibility. Educational institutions (.edu), government sites (.gov), and established organizations (.org) are generally more trustworthy than random personal blogs or commercial sites with suspicious URLs.</p>
+            <ol>
+                <li>Look for secure URLs that start with "https://" rather than "http://"</li>
+                <li>Be wary of URLs with excessive numbers, hyphens, or misspellings</li>
+                <li>Check if the domain matches the organization it claims to represent</li>
+                <li>Avoid sites with pop-up ads, excessive advertising, or clickbait headlines</li>
+            </ol>
+        </div>
+        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=300&h=200&fit=crop" alt="Computer screen showing URL bar" />
+    </section>
+    
+    <section>
+        <p>When evaluating website credibility, remember that reliable sources support their claims with evidence, cite other credible sources, and present information objectively rather than emotionally. They update their content regularly and correct errors when found. Professional websites also have clean, well-organized layouts without excessive advertisements or distracting elements that might indicate lower quality content.
+        <br><br>Additionally, trustworthy websites often provide multiple ways to verify their information. They may include links to original research, government databases, or other authoritative sources. The language used is typically professional and free from obvious bias, sensationalism, or inflammatory statements designed to provoke strong emotional reactions rather than inform readers objectively.
+        <br><br>Cross-referencing information across multiple credible sources is another crucial step in the evaluation process. If you find the same information reported consistently across several reliable websites, news organizations, or academic sources, it's more likely to be accurate. Be especially cautious of information that appears on only one website or sources that contradict established facts without providing substantial evidence to support their claims.
+        <br><br>Finally, consider the website's purpose and potential bias. Is it trying to sell you something, promote a particular viewpoint, or genuinely inform? Understanding the motivation behind a website can help you evaluate how trustworthy its information might be. Remember that even biased sources can contain factual information, but you should always be aware of their perspective when interpreting the content they provide.</p>
+    </section>
+
+    <section class="quiz-section">
+        <div class="quiz-text">
+            <p><strong>Which of the following is the BEST indicator that a website might be credible and trustworthy?</strong></p>
+            <p><strong>Clue:</strong> Think about what makes sources transparent and accountable!</p>
+            <div id="quiz-feedback"></div>
+
+            <div class="quiz-options">
+                <button data-correct="false">The website has lots of colorful graphics and animations</button>
+                <button data-correct="true">The author's credentials are clearly listed and the site cites its sources</button>
+                <button data-correct="false">The website appears first in Google search results</button>
+                <button data-correct="false">The website has many social media followers</button>
+            </div>
+            <a href="#learn-more" class="quiz-button visible">Learn More <i class="fa-solid fa-angle-right"></i></a>
+        </div>
+        <img class="quiz-img" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=250&h=200&fit=crop" alt="Student thinking about quiz question">
+    </section>
+
+    <section class="extra-resources" id="learn-more">
+        <h2>Resources for Students and Teachers</h2>
+        <p>Explore these helpful links to improve your website evaluation and critical thinking skills:</p>
+        <ul>
+            <li><a href="https://www.commonsense.org/education" target="_blank">Common Sense Education</a> – Digital literacy and citizenship resources for evaluating online content.</li>
+            <li><a href="https://www.factcheck.org/" target="_blank">FactCheck.org</a> – Nonpartisan resource for checking the accuracy of political and factual claims.</li>
+            <li><a href="https://guides.lib.berkeley.edu/evaluating-resources" target="_blank">UC Berkeley Library Guide</a> – Comprehensive guide to evaluating information sources.</li>
+            <li><a href="https://www.snopes.com/" target="_blank">Snopes</a> – Fact-checking website that investigates rumors, urban legends, and misinformation.</li>
+            <li><a href="https://mediabiasfactcheck.com/" target="_blank">Media Bias/Fact Check</a> – Resource for checking the bias and reliability of news sources.</li>
+        </ul>
+    </section>
+
+
+  </div>
+
+  <script>
+    document.querySelector('.quiz-button').addEventListener('click', () => {
+      const targetSection = document.getElementById('learn-more');
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+
+    const buttons = document.querySelectorAll('.quiz-options button');
+    const feedback = document.getElementById('quiz-feedback');
+    let attempt = 0;
+    let correctAnswered = false;
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        if (correctAnswered) return;
+
+        const isCorrect = button.dataset.correct === 'true';
+
+        if (isCorrect) {
+          button.classList.add('correct');
+          buttons.forEach(btn => {
+            if (btn !== button) btn.classList.add('incorrect');
+          });
+          feedback.textContent = attempt === 0
+            ? "🎉 Congrats! That's correct!"
+            : "🎉 Congrats! You got it this time!";
+          feedback.className = 'correct';
+          correctAnswered = true;
+        } else {
+          button.classList.add('incorrect');
+          attempt++;
+
+          if (attempt === 1) {
+            feedback.textContent = "❌ Oops! Try again.";
+          } else if (attempt === 2) {
+            feedback.textContent = "🧠 You need to improve your critical thinking!";
+            buttons.forEach(btn => {
+              if (btn.dataset.correct === 'true') {
+                btn.classList.add('correct');
+              } else if (!btn.classList.contains('incorrect')) {
+                btn.classList.add('incorrect');
+              }
+            });
+            correctAnswered = true;
+          }
+          feedback.className = 'incorrect';
+        }
+      });
+    });
+  </script>
+
+
+    <footer id="footer">
+        <div class="footer-top">
+            <img src="images/logo.png" alt="Aideas Icon" class="logo-icon">
+            <div class="footer-title">
+            <h3>Aideas – Your Guide to Smarter Research</h3>
+            </div>
+            <p>Made by Aideas</p>
+        </div>
+        <div class="footer-links">
+            <div class="footer-column">
+                <h4>About</h4>
+                <ul>
+                    <li><a href="learn.html">Practice</a></li>
+                    <li><a href="news.html">News</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Learn</h4>
+                <ul>
+                    <li><a href="learn.html">All Courses</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Core Research Skills</h4>
+                <ul>
+                    <li><a href="module1_1.html">Smarter Searching on Google</a></li>
+                    <li><a href="module1_2.html">AI and Ethical Usage</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>AI: Tool or Trap?</h4>
+                <ul>
+                    <li><a href="module2_1.html">AI Explained: Is It Really Smart?</a></li>
+                    <li><a href="module2_2.html">AI in Academics: Tool or Risk?</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Cite it Right!</h4>
+                <ul>
+                    <li><a href="module3_1.html">Understanding Plagiarism</a></li>
+                    <li><a href="module3_2.html">How to Cite Sources Properly</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Digital Literacy</h4>
+                <ul>
+                    <li><a href="module4_1.html">What is Digital Literacy?</a></li>
+                    <li><a href="module4_2.html">Deepfake and Information Manipulation</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-left">
+                <p>© 2025</p>
+                <a href="#">Terms</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div class="social-links">
+                <a href="#"><img src="images/ig.png" alt="Instagram"></a>
+                <a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a>
+                <a href="#"><img src="images/github.png" alt="GitHub"></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aideas - Your Guide to Smarter Research</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rampart+One&family=Kulim+Park&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Include Matter.js via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/matter-js@0.19.0/build/matter.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+          <img src="images/logo.png" alt="Aideas Icon" class="logo-icon">
+          <a href="index.html">Aideas – Your Guide to Smarter Research</a>
+      </div>
+      <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="learn.html" class="active">Learn</a></li>
+          <li><a href="practice.html">Practice</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="#footer">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+<div class="trusted-container">
+    <h1>What Is Digital Literacy?</h1>
+    <div class="intro">
+      <p>In today's digital world, we're surrounded by information from websites, social media, videos, and apps. But how do we know what's true and what's not? Digital literacy is the superpower that helps you navigate the online world safely and smartly.</p>
+    </div>
+    <section class="trusted-section">
+      <div class="trusted-content">
+        <div class="trusted-title">1. Understanding Digital Information</div>
+        <p>Digital literacy means knowing how to find, evaluate, and use information from digital sources responsibly. It's like being a detective online—you need to ask questions, check facts, and think critically about what you see.</p>
+        <ol>
+          <li>Learn to question what you see online before believing it.</li>
+          <li>Understand that not everything on the internet is true or accurate.</li>
+          <li>Develop skills to research and verify information from multiple sources.</li>
+        </ol>
+      </div>
+      <img src="images/digital-info.jpg" alt="Digital Information Evaluation" />
+    </section>
+    <section class="trusted-section reverse">
+      <div class="trusted-content">
+        <div class="trusted-title">2. The Role of Information in Today's World</div>
+        <p>Information shapes our decisions, opinions, and understanding of the world. With billions of people sharing content online every day, distinguishing between reliable and unreliable information has become more important than ever.</p>
+        <ol>
+          <li>Recognize that information influences how we think and act.</li>
+          <li>Understand that anyone can publish content online, regardless of expertise.</li>
+          <li>Learn that credible information comes from trusted, verified sources.</li>
+        </ol>
+      </div>
+      <img src="images/information-world.jpg" alt="Information in Today's World" />
+    </section>
+    <section>
+      <p>Digital literacy isn't just about using technology—it's about being smart and safe in the digital world. When you have strong digital literacy skills, you can protect yourself from misinformation, make better decisions, and become a responsible digital citizen.
+        <br> <br>Misinformation spreads incredibly fast online. A false story can reach millions of people within hours through social media shares, messaging apps, and online forums. This is why verification—the process of checking if information is true—is so crucial. Before sharing or believing something you see online, take a moment to verify it through trusted sources.
+        <br> <br>Think of digital literacy as your shield and sword in the online world. Your shield protects you from false information, scams, and digital threats. Your sword helps you cut through the noise to find reliable, accurate information. Together, they empower you to make informed decisions and contribute positively to online communities.
+        <br><br>The most digitally literate people don't just consume information—they actively question it, cross-reference it with other sources, and think critically about the motives behind the content they encounter. They understand that in our connected world, being digitally literate is just as important as being able to read and write.</p>
+    </section>
+
+    <section class="quiz-section">
+      <div class="quiz-text">
+        <p><strong>What is the most important skill for digital literacy?</strong></p>
+        <p><strong>Clue:</strong> Check paragraph no1</p>
+        <div id="quiz-feedback"></div>
+
+        <div class="quiz-options">
+          <button data-correct="false">Knowing how to use lots of apps and websites.</button>
+          <button data-correct="true">Learning to question and verify information before believing it.</button>
+          <button data-correct="false">Being able to type really fast on a keyboard.</button>
+          <button data-correct="false">Having the newest smartphone or computer.</button>
+        </div>
+        <a href="#learn-more" class="quiz-button visible">Learn More <i class="fa-solid fa-angle-right"></i></a>
+      </div>
+      <img class="quiz-img" src="images/digital-literacy-quiz.jpg" alt="Digital Literacy Quiz Illustration">
+    </section>
+
+    <section class="extra-resources" id="learn-more">
+      <h2>Resources for Students and Teachers</h2>
+      <p>Explore these helpful links to improve your digital literacy and critical thinking skills:</p>
+      <ul>
+        <li><a href="https://www.commonsense.org/education/digital-citizenship" target="_blank">Common Sense Education - Digital Citizenship</a> – Learn about responsible online behavior and digital literacy.</li>
+        <li><a href="https://www.mediasmarts.ca/" target="_blank">MediaSmarts</a> – Canada's center for digital and media literacy resources.</li>
+        <li><a href="https://checkology.org/" target="_blank">Checkology by News Literacy Project</a> – Learn to identify credible information and reliable sources.</li>
+        <li><a href="https://www.factcheck.org/" target="_blank">FactCheck.org</a> – A trusted source for verifying claims and debunking misinformation.</li>
+      </ul>
+    </section>
+
+  </div>
+
+  <script>
+    document.querySelector('.quiz-button').addEventListener('click', () => {
+      const targetSection = document.getElementById('learn-more');
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+
+    const buttons = document.querySelectorAll('.quiz-options button');
+    const feedback = document.getElementById('quiz-feedback');
+    let attempt = 0;
+    let correctAnswered = false;
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        if (correctAnswered) return;
+
+        const isCorrect = button.dataset.correct === 'true';
+
+        if (isCorrect) {
+          button.classList.add('correct');
+          buttons.forEach(btn => {
+            if (btn !== button) btn.classList.add('incorrect');
+          });
+          feedback.textContent = attempt === 0
+            ? "🎉 Congrats! That's correct!"
+            : "🎉 Congrats! You got it this time!";
+          feedback.className = 'correct';
+          correctAnswered = true;
+        } else {
+          button.classList.add('incorrect');
+          attempt++;
+
+          if (attempt === 1) {
+            feedback.textContent = "❌ Oops! Try again.";
+          } else if (attempt === 2) {
+            feedback.textContent = "🧠 You need to improve your critical thinking!";
+            buttons.forEach(btn => {
+              if (btn.dataset.correct === 'true') {
+                btn.classList.add('correct');
+              } else if (!btn.classList.contains('incorrect')) {
+                btn.classList.add('incorrect');
+              }
+            });
+            correctAnswered = true;
+          }
+          feedback.className = 'incorrect';
+        }
+      });
+    });
+  </script>
+
+
+    <footer id="footer">
+        <div class="footer-top">
+            <img src="images/logo.png" alt="Aideas Icon" class="logo-icon">
+            <div class="footer-title">
+            <h3>Aideas – Your Guide to Smarter Research</h3>
+            </div>
+            <p>Made by Aideas</p>
+        </div>
+        <div class="footer-links">
+            <div class="footer-column">
+                <h4>About</h4>
+                <ul>
+                    <li><a href="learn.html">Practice</a></li>
+                    <li><a href="news.html">News</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Learn</h4>
+                <ul>
+                    <li><a href="learn.html">All Courses</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Core Research Skills</h4>
+                <ul>
+                    <li><a href="module1_1.html">Smarter Searching on Google</a></li>
+                    <li><a href="module1_2.html">AI and Ethical Usage</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>AI: Tool or Trap?</h4>
+                <ul>
+                    <li><a href="module2_1.html">AI Explained: Is It Really Smart?</a></li>
+                    <li><a href="module2_2.html">AI in Academics: Tool or Risk?</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Cite it Right!</h4>
+                <ul>
+                    <li><a href="module3_1.html">Understanding Plagiarism</a></li>
+                    <li><a href="module3_2.html">How to Cite Sources Properly</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Digital Literacy</h4>
+                <ul>
+                    <li><a href="module4_1.html">What is Digital Literacy?</a></li>
+                    <li><a href="module4_2.html">Deepfake and Information Manipulation</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-left">
+                <p>© 2025</p>
+                <a href="#">Terms</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div class="social-links">
+                <a href="#"><img src="images/ig.png" alt="Instagram"></a>
+                <a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a>
+                <a href="#"><img src="images/github.png" alt="GitHub"></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

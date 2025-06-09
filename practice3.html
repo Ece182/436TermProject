@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aideas - Test Your Digital Literacy Knowledge</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rampart+One&family=Kulim+Park&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/logo.png" alt="Aideas Icon" class="logo-icon">
+                <a href="index.html">Aideas – Your Guide to Smarter Research</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="quiz-container">
+        <div class="quiz-top-navigation">
+            <a href="practice.html" class="back-to-practice">Back to Practice</a>
+        </div>
+        <div class="quiz-header" style="background-color: #6BBAA7;">
+            <h1>Test Your Academic Integrity Knowledge</h1>
+        </div>
+        <div class="quiz-content">
+            <div class="question" data-question="1">
+                <p>1. What is the primary purpose of digital literacy?</p>
+                <button class="quiz-option" data-correct="false">To use social media effectively</button>
+                <button class="quiz-option" data-correct="true">To navigate and evaluate digital information critically</button>
+                <button class="quiz-option" data-correct="false">To play online games</button>
+            </div>
+            <div class="question" data-question="2" style="display: none;">
+                <p>2. Which of these is a sign of a credible online source?</p>
+                <button class="quiz-option" data-correct="false">A flashy website design</button>
+                <button class="quiz-option" data-correct="true">Author credentials and references</button>
+                <button class="quiz-option" data-correct="false">A recent publication date</button>
+            </div>
+            <div class="question" data-question="3" style="display: none;">
+                <p>3. What should you do if you encounter a deepfake video?</p>
+                <button class="quiz-option" data-correct="false">Share it immediately</button>
+                <button class="quiz-option" data-correct="true">Verify its authenticity with trusted sources</button>
+                <button class="quiz-option" data-correct="false">Ignore it</button>
+            </div>
+            <div class="question" data-question="4" style="display: none;">
+                <p>4. How can you protect your personal data online?</p>
+                <button class="quiz-option" data-correct="false">Use the same password everywhere</button>
+                <button class="quiz-option" data-correct="true">Use strong, unique passwords and two-factor authentication</button>
+                <button class="quiz-option" data-correct="false">Share your details on public forums</button>
+            </div>
+            <div class="question" data-question="5" style="display: none;">
+                <p>5. Why is it important to understand digital privacy?</p>
+                <button class="quiz-option" data-correct="false">To avoid using the internet</button>
+                <button class="quiz-option" data-correct="true">To protect personal information from misuse</button>
+                <button class="quiz-option" data-correct="false">To increase social media followers</button>
+            </div>
+        </div>
+        <div class="quiz-navigation">
+            <button class="nav-button back-button" style="display: none;">Back</button>
+            <button class="nav-button next-button">Next</button>
+        </div>
+    </main>
+
+
+
+    <script>
+        let currentQuestion = 1;
+        let score = 0;
+        const totalQuestions = 5;
+
+        const questions = document.querySelectorAll('.question');
+        const backButton = document.querySelector('.back-button');
+        const nextButton = document.querySelector('.next-button');
+
+        function showQuestion(index) {
+            questions.forEach((q, i) => {
+                q.style.display = i + 1 === index ? 'block' : 'none';
+            });
+            backButton.style.display = index > 1 ? 'inline-block' : 'none';
+            nextButton.textContent = index === totalQuestions ? 'Finish Test' : 'Next';
+        }
+
+        function checkAnswer(selectedButton) {
+            const correct = selectedButton.getAttribute('data-correct') === 'true';
+            selectedButton.style.backgroundColor = correct ? '#4CAF50' : '#F44336';
+            selectedButton.style.color = 'white';
+            selectedButton.disabled = true;
+
+            if (correct) score++;
+        }
+
+        questions.forEach(question => {
+            question.querySelectorAll('.quiz-option').forEach(option => {
+                option.addEventListener('click', () => checkAnswer(option));
+            });
+        });
+
+        backButton.addEventListener('click', () => {
+            if (currentQuestion > 1) {
+                currentQuestion--;
+                showQuestion(currentQuestion);
+            }
+        });
+
+        nextButton.addEventListener('click', () => {
+            if (currentQuestion < totalQuestions) {
+                currentQuestion++;
+                showQuestion(currentQuestion);
+            } else {
+                localStorage.setItem('quizScore', score);
+                localStorage.setItem('totalQuestions', totalQuestions);
+                window.location.href = 'result.html';
+            }
+        });
+
+        showQuestion(currentQuestion);
+    </script>
+</body>
+</html>

@@ -5,11 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aideas - Your Guide to Smarter Research</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Rampart+One&family=Kulim+Park&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- For icons -->
+    <!-- Include Matter.js via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/matter-js@0.19.0/build/matter.min.js"></script>
 </head>
 
 <body>
@@ -22,8 +20,8 @@
       <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="learn.html">Learn</a></li>
-          <li><a href="practice.html" class="active">Practice</a></li>
+          <li><a href="learn.html" class="active">Learn</a></li>
+          <li><a href="practice.html">Practice</a></li>
           <li><a href="news.html">News</a></li>
           <li><a href="#footer">Contact Us</a></li>
       </ul>
@@ -32,44 +30,49 @@
 
 
   <section class="header">
-    <h1 id="practice-title">ALL PRACTICE</h1>
-    <h2 id="practice-h2"> Welcome, Again!</h2>
-    <p><em>Let’s Test Your knowledge!</em></p>
+    <h1 id="module-title">MODULES</h1>
+    <h2 id="explore-title">Explore for <strong>free!</strong></h2>
+    <p><em>let’s get it started in here!</em></p>
   </section>
 
-    <!-- Practices Section -->
-  <section class="practice">
-    <div class="practice-grid">
+  <!-- Modules Section -->
+  <section class="modules">
+    <div class="modules-grid">
 
-      <div class="practice-card">
-        <img src="images/1.jpg" alt="Core Research Skills">
-        <h2 class="heading">Core Research Skills Quiz</h2>
-        <p class="subtitle"> <i class="fa-regular fa-clock"></i> 5 Min</p>        
-        <a href="practice1.html" class="start-btn">Start</a>
-
+      <div class="module-card">
+        <a href="core_research_skills.html" class="card-link">
+          <img src="images/Core Research Skills.jpg" alt="Core Research Skills">
+          <h2 class="heading">Core Research Skills</h2>
+          <p class="subtitle">The Basics of Smart Searching</p>
+          <div class="time-badge">15 mins</div>
+        </a>
       </div>
 
-      <div class="practice-card">
-        <img src="images/2.jpg" alt="Artificial Intelligence and Ethical Usage">
-        <h2 class="heading">Artificial Intelligence and <br> Ethical Usage Quiz</h2>
-        <p class="subtitle"><i class="fa-regular fa-clock"></i> 10 Min</p>
-        <a href="practice2.html" class="start-btn">Start</a>
+      <div class="module-card">
+        <a href="AI_and_Ethical_Usage.html" class="card-link">
+          <img src="images/Artificial Intelligence and Ethical Usage.png" alt="Artificial Intelligence and Ethical Usage">
+          <h2 class="heading">Artificial Intelligence and <br> Ethical Usage</h2>
+          <p class="subtitle">How to Use AI Responsibly</p>
+          <div class="time-badge">15 mins</div>
+        </a>
       </div>
 
-      <div class="practice-card">
-        <img src="images/3.jpg" alt="Academic Integrity and Avoiding Plagiarism">
-        <h2 class="heading">Academic Integrity and <br> Avoiding Plagiarism Quiz</h2>
-        <p class="subtitle"> <i class="fa-regular fa-clock"></i> 10 Min</p>
-        <a href="practice3.html" class="start-btn">Start</a>
-
+      <div class="module-card">
+        <a href="Plagiarism.html" class="card-link">
+          <img src="images/Academic Integrity and Avoiding Plagiarism.png" alt="Academic Integrity and Avoiding Plagiarism">
+          <h2 class="heading">Academic Integrity and <br> Avoiding Plagiarism</h2>
+          <p class="subtitle">Mastering Citations & Academic Integrity</p>
+          <div class="time-badge">15 mins</div>
+        </a>
       </div>
 
-      <div class="practice-card">
-        <img src="images/4.jpg" alt="Digital Literacy">
-        <h2 class="heading"> Digital Literacy Quiz</h2>
-        <p class="subtitle"><i class="fa-regular fa-clock"></i> 5 Min</p>
-        <a href="practice4.html" class="start-btn">Start</a>
-
+      <div class="module-card">
+        <a href="digital_literacy.html" class="card-link">
+          <img src="images/Digital Literacy.jpg" alt="Digital Literacy">
+          <h2 class="heading">Digital Literacy</h2>
+          <p class="subtitle">How to Detect Misinformation & Choose Reliable Sources</p>
+          <div class="time-badge">15 mins</div>
+        </a>
       </div>
 
     </div>
